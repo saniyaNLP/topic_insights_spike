@@ -18,7 +18,7 @@ def display_compaign_topics():
 
     st.session_state['topics_df'] = st.session_state['topics_df'].sort_values(by = ['Topic']).reset_index(drop=True)
     st.dataframe(st.session_state['topics_df'])
-    selected_tab = st.selectbox("Choose a tab:", ["Graphs", "Other Tab"])
+    selected_tab = st.selectbox("Choose a tab:", ["Graphs"])
 
     # Display content for the selected tab
     if selected_tab == "Graphs":
