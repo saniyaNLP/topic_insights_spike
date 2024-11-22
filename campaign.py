@@ -2,9 +2,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import pandas as pd
 import plotly.express as px
-import ast
-import pickle
-import os
+from graphs import display_compaign_topics
 
 def display_compaign_topics():
     if "topics_df" not in st.session_state.keys():
@@ -20,3 +18,4 @@ def display_compaign_topics():
 
     st.session_state['topics_df'] = st.session_state['topics_df'].sort_values(by = ['Topic']).reset_index(drop=True)
     st.dataframe(st.session_state['topics_df'])
+    display_compaign_topics()
