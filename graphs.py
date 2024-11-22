@@ -54,6 +54,10 @@ def plot_graphs():
                                                                        f"All Topics",
                       labels={selected_column_2: f'AVG {selected_column_2}', 'Name': 'Topic ID'})
 
-        fig.update_layout(showlegend=False)
+        fig.update_layout(
+            showlegend=False,
+            width=1000,  # Set width of the plot
+            height=600,  # Set height of the plot
+        )
         st.plotly_chart(fig)
 
