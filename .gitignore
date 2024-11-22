@@ -1,0 +1,2 @@
+.streamlit/secrets.tomlgit add .gitignore
+git commit -m "Add secrets.toml to .gitignore"
