@@ -5,8 +5,6 @@ import plotly.express as px
 
 
 def display_compaign_topics():
-    st.title("Topic insights for campaign id: 17074")
-
     time_series_df = st.session_state['time_series_df']
 
     tab1, tab2 = st.tabs("Time Series", "Topics")

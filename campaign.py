@@ -18,4 +18,6 @@ def display_compaign_topics():
 
     st.session_state['topics_df'] = st.session_state['topics_df'].sort_values(by = ['Topic']).reset_index(drop=True)
     st.dataframe(st.session_state['topics_df'])
-    display_compaign_topics()
+    tab1 = st.tabs("Graphs")
+    with tab1:
+        display_compaign_topics()
