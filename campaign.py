@@ -16,8 +16,8 @@ def display_compaign_topics():
                                  "/avg_attention_time_series.csv")
     st.subheader('AVERAGE VIEWABLE_ATTENTION_EVENTS Time Series')
 
-    all_topics = ['All'] + list(time_series_df['Topic'].unique())
-    selected_topic = st.selectbox('Select a product:', all_topics)
+    all_topics = ['All'] + list(time_series_df['Name'].unique())
+    selected_topic = st.selectbox('Select a topic:', all_topics)
 
     # Filter the dataframe based on the selected product
     if selected_topic == 'All':
