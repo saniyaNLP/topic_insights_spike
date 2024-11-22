@@ -61,7 +61,7 @@ def plot_graphs():
             xaxis=dict(
                 tickangle=45,  # Rotate x-axis labels to 45 degrees
                 tickmode='array',
-                tickvals=sorted_df['Topic ID'],  # Set the tick values to match your data points
+                tickvals=sorted_df['Name'],  # Set the tick values to match your data points
             ),
             showlegend=False  # Disable legend if not needed
         )
