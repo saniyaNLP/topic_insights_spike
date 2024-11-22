@@ -7,7 +7,7 @@ import plotly.express as px
 def display_compaign_topics():
     time_series_df = st.session_state['time_series_df']
 
-    tab1, tab2 = st.tabs("Time Series", "Topics")
+    tab1, tab2 = st.tabs(["Time Series", "Topics"])
     with tab1:
         st.subheader('Time Series')
 
