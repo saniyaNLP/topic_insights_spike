@@ -14,7 +14,7 @@ def display_compaign_topics():
         st.session_state['time_series_df'] = df
 
     st.title("Topic insights for campaign id: 17074")
-    st.subheader("Advertising for TV show Secret Lives of Mormon Wives")
+    st.subtitle("Advertising for TV show Secret Lives of Mormon Wives")
 
     st.session_state['topics_df'] = st.session_state['topics_df'].sort_values(by = ['Topic']).reset_index(drop=True)
     st.dataframe(st.session_state['topics_df'])
