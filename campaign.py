@@ -18,11 +18,5 @@ def display_compaign_topics():
 
     st.session_state['topics_df'] = st.session_state['topics_df'].sort_values(by = ['Topic']).reset_index(drop=True)
     st.dataframe(st.session_state['topics_df'])
-    selected_tab = st.selectbox("Choose a tab:", ["Graphs"])
+    plot_graphs()
 
-    # Display content for the selected tab
-    if selected_tab == "Graphs":
-        st.write("Here, you can add your graph plotting code.")
-        plot_graphs()
-    elif selected_tab == "Other Tab":
-        st.write("Other content can go here.")
