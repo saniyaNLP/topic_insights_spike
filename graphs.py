@@ -10,7 +10,6 @@ def plot_graphs():
 
     tab1, tab2 = st.tabs(["Time Series", "Topics"])
     with tab1:
-        st.write("trial")
         st.subheader('Time Series')
 
         all_topics = ['All'] + list(time_series_df['Name'].unique())
