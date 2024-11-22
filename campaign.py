@@ -19,6 +19,9 @@ def display_compaign_topics():
     all_topics = ['All'] + list(time_series_df['Name'].unique())
     selected_topic = st.selectbox('Select a topic:', all_topics)
 
+    columns = ['VIEWABLE_ATTENTION_EVENTS', 'AVG_VIEWABLE_ATTENTION_TIME', 'CTR']
+    selected_column = st.selectbox('Select a column to visualize:', columns)
+
     # Filter the dataframe based on the selected product
     if selected_topic == 'All':
         filtered_df = time_series_df
@@ -30,15 +33,16 @@ def display_compaign_topics():
 
     if selected_topic == 'All':
         # If 'All' is selected, plot all products in the same graph with hover tooltips
-        fig = px.line(time_series_df, x='DAY', y='VIEWABLE_ATTENTION_EVENTS', color='Topic', title="AVERAGE "
-                                                                                    "VIEWABLE_ATTENTION_EVENTS for All Topics",
-                      labels={'VIEWABLE_ATTENTION_EVENTS': 'AVG VIEWABLE_ATTENTION_EVENTS', 'DAY': 'Date'})
+        fig = px.line(time_series_df, x='DAY', y=selected_column, color='Topic', title="AVERAGE "
+                                                                                    f"{selected_column} for "
+                                                                                       f"All Topics",
+                      labels={selected_column: f'AVG {selected_column}', 'DAY': 'Date'})
     else:
         # If a specific product is selected, plot only that product
-        fig = px.line(filtered_df, x='DAY', y='VIEWABLE_ATTENTION_EVENTS', title=f"AVERAGE VIEWABLE_ATTENTION_EVENTS "
+        fig = px.line(filtered_df, x='DAY', y=selected_column, title=f"AVERAGE {selected_column} "
                                                                                f"for topic"
                                                               f" {selected_topic}",
-                      labels={'VIEWABLE_ATTENTION_EVENTS': 'AVG VIEWABLE_ATTENTION_EVENTS', 'DAY': 'Date'})
+                      labels={selected_column: f'AVG {selected_column}', 'DAY': 'Date'})
 
     # Update layout to remove the legend (optional)
     fig.update_layout(showlegend=False)
