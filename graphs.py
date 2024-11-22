@@ -48,16 +48,22 @@ def plot_graphs():
 
         selected_column_2 = st.selectbox('Select a column to visualize:', columns, key ='topics')
         sorted_df = topics_df.sort_values(by = selected_column_2, ascending=False).reset_index(drop=True).head(10)
-        fig, ax = plt.subplots(figsize=(10, 6))
         fig = px.scatter(sorted_df, x='Name', y=selected_column_2, title="AVERAGE "
                                                                        f"{selected_column_2} for "
                                                                        f"All Topics",
                       labels={selected_column_2: f'AVG {selected_column_2}', 'Name': 'Topic ID'})
 
         fig.update_layout(
-            showlegend=False,
-            width=1000,  # Set width of the plot
-            height=600,  # Set height of the plot
+            width=1200,  # Increase the width to spread out the plot
+            height=600,  # Adjust height for better aspect ratio
+            xaxis_title='Topic ID',
+            yaxis_title='AVG CTR',
+            xaxis=dict(
+                tickangle=45,  # Rotate x-axis labels to 45 degrees
+                tickmode='array',
+                tickvals=sorted_df['Topic ID'],  # Set the tick values to match your data points
+            ),
+            showlegend=False  # Disable legend if not needed
         )
         st.plotly_chart(fig)
 
