@@ -19,7 +19,7 @@ def display_compaign_topics():
     all_topics = ['All'] + list(time_series_df['Name'].unique())
     selected_topic = st.selectbox('Select a topic:', all_topics)
 
-    columns = ['VIEWABLE_ATTENTION_EVENTS', 'AVG_VIEWABLE_ATTENTION_TIME', 'CTR']
+    columns = ['VIEWABLE_ATTENTION_EVENTS', 'AVG_VIEWABLE_ATTENTION_TIME', 'CTR', 'COUNT']
     selected_column = st.selectbox('Select a column to visualize:', columns)
 
     # Filter the dataframe based on the selected product
