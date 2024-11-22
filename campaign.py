@@ -23,7 +23,7 @@ def display_compaign_topics():
     if selected_topic == 'All':
         filtered_df = time_series_df
     else:
-        filtered_df = time_series_df[time_series_df['Topic'] == selected_topic]
+        filtered_df = time_series_df[time_series_df['Name'] == selected_topic]
 
     # Plot the price time series
     fig, ax = plt.subplots(figsize=(10, 6))
