@@ -9,7 +9,7 @@ def display_iab_topics():
                "/time_series_scores.csv")
         st.session_state['overall_results'] = df
     iabv3_classes = list(st.session_state['overall_results'].keys())
-    selected_cat = st.selectbox('Select an IAB cat:', iabv3_classes)
+    selected_cat = st.selectbox('Select an IAB cat:', iabv3_classes,  key ='iab_cat')
 
     st.title("Topic insights for campaign id: 17074 per IAB category")
 
