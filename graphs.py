@@ -43,7 +43,7 @@ def plot_graphs():
 
     with tab2:
         topics_df = st.session_state['topics_df']
-        st.subheader('Time Series')
+        st.subheader('Overall')
 
         selected_column_2 = st.selectbox('Select a column to visualize:', columns, key ='topics')
         sorted_df = topics_df.sort_values(by = selected_column_2, ascending=False).reset_index(drop=True).head(10)
