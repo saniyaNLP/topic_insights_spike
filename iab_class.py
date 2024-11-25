@@ -8,7 +8,7 @@ def display_iab_topics():
         df = pd.read_csv("s3://gumgum-research-sx/sn-models/category_entry_points/niche_anomaly/adam_spike/per_iab"
                "/time_series_scores.csv")
         st.session_state['overall_results'] = df
-    iabv3_classes = list(st.session_state['overall_results'].keys())
+    iabv3_classes = list(st.session_state['overall_results']['iab_cat'].unique())
     selected_cat = st.selectbox('Select an IAB cat:', iabv3_classes,  key ='iab_cat')
 
     st.title("Topic insights for campaign id: 17074 per IAB category")
