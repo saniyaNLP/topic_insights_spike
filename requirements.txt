@@ -3,3 +3,4 @@ boto3==1.34.64
 plotly==5.24.1
 s3fs==2024.9.0
 matplotlib==3.7.5
+pandas==1.4.4
