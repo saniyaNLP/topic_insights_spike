@@ -13,8 +13,8 @@ def display_compaign_topics():
         df =pd.read_csv("s3://gumgum-research-sx/sn-models/category_entry_points/niche_anomaly/adam_spike/avg_attention_time_series.csv")
         st.session_state['time_series_df'] = df
 
-    st.title("Topic insights for campaign id: 17074")
-    st.title("Advertising for TV show Secret Lives of Mormon Wives")
+    st.header("Campaign id: 17074")
+    st.header("Campaign name: Advertising for TV show Secret Lives of Mormon Wives")
 
     st.session_state['topics_df'] = st.session_state['topics_df'].sort_values(by = ['Topic']).reset_index(drop=True)
     st.dataframe(st.session_state['topics_df'])
