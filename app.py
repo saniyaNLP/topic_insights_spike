@@ -8,7 +8,7 @@ st.set_page_config(
     page_title="Topic Insights",
     page_icon="👁️‍🗨️",
 )
-
+st.title("Topic Insights")
 
 tab1, tab2 = st.tabs(["Campaign", "IAB Cats" ])
 
