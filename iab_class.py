@@ -18,4 +18,3 @@ def display_iab_topics():
 
     selected_df = selected_df.sort_values(by = ['Topic']).reset_index(drop=True)
     st.dataframe(selected_df)
-    plot_graphs()
