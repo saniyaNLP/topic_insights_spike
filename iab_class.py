@@ -17,7 +17,7 @@ def display_iab_topics():
     iabv3_classes = list(st.session_state['overall_results']['iab_cat'].unique())
     selected_cat = st.selectbox('Select an IAB cat:', iabv3_classes,  key ='iab_cat')
 
-    st.title("Topic insights for campaign id: 17074 per IAB category")
+    st.title("Topic insights for campaign id: 17074")
 
     selected_overall_df = st.session_state['overall_results'][st.session_state['overall_results'][
                                                           'iab_cat']==selected_cat].copy()
